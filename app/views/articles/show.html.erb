@@ -1,3 +1,11 @@
 <li><%=@article.id%></li>
 <li><%=@article.title %></li>
 <li><%=@article.body%></li>
+<%= link_to 'Edit this Article', edit_article_path %>
+<%= link_to 'Destroy', article_path(@article), data: { turbo_method: :delete,turbo_confirm: "Are you sure?"} %>
+
+<h2>Comments</h2>
+<%= render @article.comments%>
+
+<h2>Add Comment</h2>
+<%= render 'comments/form' %>
